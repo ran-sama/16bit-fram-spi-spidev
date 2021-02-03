@@ -17,7 +17,7 @@ READ = 3
 WRITE = 2
 WRITE_EN = 6
 WRITE_DIS = 4
-BUF_SIZE = 32
+BUF_SIZE = 64
 chip_size = 32768
 
 def writeByteAll(addr,chunk):
@@ -31,10 +31,8 @@ def readByteAll():
         memory_address = i*BUF_SIZE
         msb = memory_address >> 8
         lsb = memory_address & 0xFF
-        val = spi.xfer2([READ,msb,lsb,0x00,0x00,0x00,0x00,0x00,
-        0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-        0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-        0x00,0x00,0x00,0x00,0x00])
+        dummy = [0] * BUF_SIZE
+        val = spi.xfer2([READ,msb,lsb]+dummy)
         blob = list(val[3:])
         for ch in map(chr,blob):
             sys.stdout.write(ch)
