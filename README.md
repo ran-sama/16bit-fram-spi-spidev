@@ -22,7 +22,7 @@ Make sure to chmod +x your files, usage is trivial:
 ```
 ./fram256.py w < onefill32
 ./fram256.py r > empty_output.txt
-./fram256.py w < mlems_eeprom.jpg
+./fram256.py w < mlems_fram.jpg
 ./fram256.py r > mlems_output.jpg
 ```
 Currently only reading and writing exact 32768 Byte files is supported.
