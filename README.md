@@ -35,14 +35,14 @@ https://github.com/ran-sama/16bit-eeprom-i2c-smbus2
 ```
 ran@raspberrypi:~ $ time python3 fram3.py w <  mlems_fram.jpg
 
-real    0m0.334s
-user    0m0.137s
-sys     0m0.187s
+real    0m0.330s
+user    0m0.184s
+sys     0m0.135s
 ran@raspberrypi:~ $ time python3 fram3.py r > fast_out.txt
 
-real    0m0.852s
-user    0m0.450s
-sys     0m0.401s
+real    0m0.840s
+user    0m0.444s
+sys     0m0.394s
 ran@raspberrypi:~ $
 ```
 
