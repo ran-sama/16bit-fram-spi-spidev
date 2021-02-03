@@ -35,15 +35,15 @@ https://github.com/ran-sama/16bit-eeprom-i2c-smbus2
 ```
 ran@raspberrypi:~ $ time ./fram256.py w <  mlems_fram.jpg
 
-real    0m0.330s
-user    0m0.184s
-sys     0m0.135s
+real    0m0.298s
+user    0m0.167s
+sys     0m0.093s
 ran@raspberrypi:~ $ time ./fram256.py r | sha1sum
 79710fcc6990dfab2349efe2ceea31f7875597d3  -
 
-real    0m0.642s
-user    0m0.494s
-sys     0m0.395s
+real    0m0.590s
+user    0m0.467s
+sys     0m0.342s
 ran@raspberrypi:~ $
 ```
 
@@ -56,7 +56,7 @@ This FRAM module (FM25W256) provides longer retention (151 years), more cycles (
 
 Due to usage of spidev this is insanely fast compared to i2c.
 
-Writing and reading in 32 byte blocks is the key to make best use of the SPI bus.
+Writing and reading in 64 byte blocks is the key to make best use of the SPI bus.
 
 ## License
 
