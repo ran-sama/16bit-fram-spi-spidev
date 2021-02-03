@@ -12,11 +12,11 @@ sys.stdout.reconfigure(encoding='latin-1')
 spi.max_speed_hz = 20*1000*1000
 spi.mode = 0b00
 
+i=0
 READ = 3
 WRITE = 2
 WRITE_EN = 6
 WRITE_DIS = 4
-
 BUF_SIZE = 32
 chip_size = 32768
 
@@ -42,9 +42,6 @@ def readByteAll():
 
 if (op_mode == "w"):
     data = sys.stdin.read()
-    i=0
-    j=0
-    chunk = []
     while i * BUF_SIZE < chip_size:
         chunk = [ord(data[j+i*BUF_SIZE]) for j in range(BUF_SIZE)]
         writeByteAll(i*BUF_SIZE, chunk)
