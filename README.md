@@ -33,7 +33,7 @@ https://github.com/ran-sama/16bit-eeprom-i2c-smbus2
 ## Benchmarks
 
 ```
-ran@raspberrypi:~ $ time python3 fram3.py w < mlems_out_fixed.jpg
+ran@raspberrypi:~ $ time python3 fram3.py w <  mlems_fram.jpg
 
 real    0m0.334s
 user    0m0.137s
@@ -43,6 +43,7 @@ ran@raspberrypi:~ $ time python3 fram3.py r > fast_out.txt
 real    0m0.852s
 user    0m0.450s
 sys     0m0.401s
+ran@raspberrypi:~ $
 ```
 
 Writing at 20MHz SPI speeds is even faster than with my dedicated CH341a programmer which takes about 600ms on my desktop. The poor reading performance might be caused by inefficient coding on my end in Python 3 itself. As long as it is below 1 second I see no reason to improve it yet.
