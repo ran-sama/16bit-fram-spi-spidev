@@ -1,5 +1,5 @@
 # 16bit-fram-spi-spidev
-  Write to and read from a 16bit FRAM or EEPROM with Python spidev over the SPI bus. 
+  Write to and read from a 16bit FRAM or EEPROM with Python 3 spidev over the SPI bus. 
 
 Tested on FM25W256 with 256 Kibibit (aka 32 KiB or 32768 Byte):
 
